@@ -1,14 +1,418 @@
-body{
-    background-color: rgb(253, 251, 251);
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
+    box-sizing: border-box;
 }
-h1{
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f5f3f0;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+}
+
+/* ===== CABEÇALHO ===== */
+
+header {
+    background: linear-gradient(135deg, #171717, #380000, #7e0202);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+    border-bottom: 6px solid #b20d0d;
+}
+
+header h1 {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 38px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+
+main {
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 0 25px;
+}
+
+p {
+    font-size: 17px;
+    text-align: justify;
+    margin: 20px 0;
+}
+
+/* ===== TÍTULOS ===== */
+
+h2 {
     color: #7e0202;
-    font-style:italic ;
+    font-size: 28px;
+    line-height: 1.4;
+    margin-top: 55px;
+    margin-bottom: 20px;
+    border-left: 6px solid #7e0202;
+    padding-left: 15px;
 }
- .eminem {
-    width:50%;
-    text-align:center;
- }
-.jay-z {
-    width:50%;
+
+h3 {
+    color: #7e0202;
+    font-size: 23px;
+    margin-top: 10px;
 }
+
+/* ===== IMAGENS GERAIS ===== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* Imagem de breaking */
+
+.break {
+    width: 75%;
+    max-height: 480px;
+    object-fit: cover;
+    border: 4px solid #222222;
+}
+
+/* Segunda imagem do conteúdo */
+
+.imagem {
+    width: 75%;
+    max-height: 450px;
+    object-fit: cover;
+    border: 3px solid #7e0202;
+}
+
+/* ===== SEÇÃO INTERATIVA ===== */
+
+.explore-hiphop {
+    background: linear-gradient(145deg, #151515, #260000, #111111);
+    color: #f5f5f5;
+    margin: 55px 0;
+    padding: 40px;
+    border-radius: 14px;
+    border: 1px solid #590000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.explore-hiphop .interacao-label {
+    color: #ff4b4b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.explore-hiphop h2 {
+    color: white;
+    font-size: 32px;
+    border-left: none;
+    border-bottom: 3px solid #a30000;
+    padding: 0 0 15px;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+}
+
+.explore-hiphop > p {
+    color: #dddddd;
+}
+
+/* Contêiner das décadas */
+
+.decadas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Cada período */
+
+.decada {
+    background-color: #222222;
+    border: 1px solid #494949;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.decada:hover {
+    border-color: #d02020;
+}
+
+/* Parte clicável */
+
+.decada summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 22px 25px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    transition: background-color 0.3s ease;
+}
+
+.decada summary::-webkit-details-marker {
+    display: none;
+}
+
+.decada summary::marker {
+    content: "";
+}
+
+.decada summary:hover {
+    background-color: #3b0808;
+}
+
+/* Símbolo de abrir e fechar */
+
+.decada summary strong {
+    color: #ff4545;
+    font-size: 28px;
+    transition: transform 0.3s ease;
+}
+
+.decada[open] summary strong {
+    transform: rotate(45deg);
+}
+
+/* Conteúdo revelado */
+
+.decada-conteudo {
+    padding: 10px 25px 25px;
+    border-top: 1px solid #4a2525;
+    animation: aparecer 0.35s ease;
+}
+
+.decada-conteudo h3 {
+    color: #ff5555;
+    margin-top: 20px;
+}
+
+.decada-conteudo p {
+    color: #eeeeee;
+    font-size: 16px;
+}
+
+.decada-conteudo strong {
+    color: #ff7777;
+}
+
+/* Frase final da seção interativa */
+
+.explore-hiphop .timeline-footer {
+    color: #ff5555;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+
+/* Animação do conteúdo aberto */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== SEÇÃO DOS ARTISTAS ===== */
+
+.artista {
+    background-color: white;
+    margin: 30px 0;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #7e0202;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.artista h3 {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 10px;
+}
+
+/* Imagens individuais dos artistas */
+
+.tupac,
+.big,
+.nas,
+.jay,
+.eminem {
+    width: 55%;
+    max-height: 500px;
+    object-fit: contain;
+    background-color: #eeeeee;
+    border-radius: 8px;
+    border: 2px solid #dddddd;
+}
+
+/* ===== RODAPÉ ===== */
+
+footer {
+    background-color: #151515;
+    color: #eeeeee;
+    padding: 35px 25px;
+    margin-top: 60px;
+    border-top: 6px solid #7e0202;
+}
+
+footer h2 {
+    max-width: 950px;
+    margin: 0 auto 20px;
+    color: #ff5555;
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+footer p {
+    max-width: 950px;
+    margin: 20px auto;
+    text-align: center;
+    color: #dddddd;
+}
+
+footer ul {
+    max-width: 950px;
+    margin: 20px auto;
+    padding-left: 25px;
+}
+
+footer li {
+    margin: 12px 0;
+}
+
+footer a {
+    color: #ff7777;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* ===== RESPONSIVIDADE PARA CELULARES ===== */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 35px 18px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 16px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 23px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .break,
+    .imagem {
+        width: 100%;
+    }
+
+    .explore-hiphop {
+        padding: 22px 16px;
+        margin: 35px 0;
+    }
+
+    .explore-hiphop h2 {
+        font-size: 25px;
+    }
+
+    .decada summary {
+        padding: 18px 15px;
+        font-size: 17px;
+    }
+
+    .decada-conteudo {
+        padding: 10px 16px 20px;
+    }
+
+    .decada-conteudo p {
+        font-size: 15px;
+    }
+
+    .tupac,
+    .big,
+    .nas,
+    .jay,
+    .eminem {
+        width: 85%;
+        max-height: 420px;
+    }
+
+    .artista {
+        padding: 18px;
+    }
+
+    footer {
+        padding: 28px 18px;
+    }
+
+    footer ul {
+        padding-left: 22px;
+    }
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
